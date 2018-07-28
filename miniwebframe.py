@@ -6,16 +6,20 @@ sk.bind(("127.0.0.1",8080))
 sk.listen(5)
 
 def tangyuan():
-    return b"tangyuan"
+    with open("tangyuan.html","rb") as f:
+        return f.read()
 
 def xiaotang():
-    return b"xiaotang"
+    with open("xiaotang.html","rb") as f:
+        return f.read()
 
 def index():
-    return b"index"
+    with open("index.html","rb") as f:
+        return f.read()
 
 def _404():
-    return bytes("404了",encoding="gbk")
+    with open("404.html","rb") as f:
+        return f.read()
 
 urls=[
     ("/tangyuan",tangyuan),
