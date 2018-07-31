@@ -15,7 +15,21 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.shortcuts import HttpResponse,render
+
+
+def tangyuan(request):
+    with open("templates/tangyuan/tangyuan.html") as f:
+        htmlstr = f.read()
+    return HttpResponse(bytes(htmlstr,encoding='utf-8'))
+
+
+def login(request):
+    return render(request,template_name='login.html')
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^login/', login),
+    url(r'^tangyuan/', tangyuan),
 ]
