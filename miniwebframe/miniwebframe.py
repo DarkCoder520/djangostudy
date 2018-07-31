@@ -40,13 +40,4 @@ while True:
             break
     else:
         conn.send(_404())
-    # if url == "/tangyuan":
-    #     result = tangyuan()
-    #     conn.send(result)
-    # elif url == "/xiaotang":
-    #     result = xiaotang()
-    #     conn.send(result)
-    # else:
-    #     result = _404()
-    #     conn.send(result)
     conn.close()
